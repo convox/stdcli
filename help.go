@@ -38,6 +38,8 @@ func helpGlobal(e *Engine) {
 	for _, cmd := range cs {
 		e.Writer.Writef(fmt.Sprintf(fmt.Sprintf("<h1>%%-%ds</h1>  <value>%%s</value>\n", l), cmd.FullCommand(), cmd.Description))
 	}
+
+	e.Writer.Writef("\nUse <info>convox [command] --help</info> for more information about a command.\n")
 }
 
 func helpCommand(e *Engine, cmd *Command) {
