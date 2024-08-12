@@ -9,21 +9,23 @@ import (
 )
 
 type Flag struct {
-	Default     interface{}
-	Description string
-	Name        string
-	Short       string
-	Value       interface{}
+	Default         interface{}
+	Description     string
+	Name            string
+	Short           string
+	Value           interface{}
+	skipHelpCommand bool
 
 	kind string
 }
 
-func BoolFlag(name, short, description string) Flag {
+func BoolFlag(name, short, description string, skipHelpCommand bool) Flag {
 	return Flag{
-		Description: description,
-		Name:        name,
-		Short:       short,
-		kind:        "bool",
+		Description:     description,
+		Name:            name,
+		Short:           short,
+		kind:            "bool",
+		skipHelpCommand: skipHelpCommand,
 	}
 }
 
