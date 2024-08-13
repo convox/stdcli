@@ -53,7 +53,7 @@ func helpCommand(e *Engine, cmd *Command) {
 	fs := []Flag{}
 
 	for _, f := range cmd.Flags {
-		if f.skipHelpCommand {
+		if f.SkipHelpCommand {
 			continue
 		}
 

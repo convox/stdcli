@@ -14,18 +14,17 @@ type Flag struct {
 	Name            string
 	Short           string
 	Value           interface{}
-	skipHelpCommand bool
+	SkipHelpCommand bool
 
 	kind string
 }
 
-func BoolFlag(name, short, description string, skipHelpCommand bool) Flag {
+func BoolFlag(name, short, description string) Flag {
 	return Flag{
 		Description:     description,
 		Name:            name,
 		Short:           short,
 		kind:            "bool",
-		skipHelpCommand: skipHelpCommand,
 	}
 }
 
